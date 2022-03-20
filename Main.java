@@ -53,3 +53,77 @@ public class Main{
 
 //--------------------------------------------------------------------------------------------
 
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[]=new int[n];
+
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        int max=arr[0];
+        for(int i=0;i<n;i++){
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+
+        int min=arr[0];
+        for(int i=0;i<n;i++){
+            if(arr[i]<min){
+                min=arr[i];
+            }
+        }
+
+        int diff=max-min;
+        System.out.println(diff);
+    }
+}*/
+
+//---------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void searchElement(int[] arr, int n, int d){
+
+        int temp=-1;
+        for(int i=0;i<n;i++){
+            if(arr[i]==d){
+                System.out.println(i);
+                temp=0;
+            }
+        }
+        if(temp==-1){
+            System.out.println(temp);
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+        int d=scn.nextInt();
+
+        searchElement(arr,n,d);
+    }
+}
+
+//------------------------------------------------------------------------------
+
