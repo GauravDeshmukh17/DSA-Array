@@ -90,7 +90,7 @@ public class Main{
 
 //---------------------------------------------------------------------------------
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -123,7 +123,56 @@ public class Main{
 
         searchElement(arr,n,d);
     }
-}
+}*/
 
 //------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void barChart(int arr[],int n,int max){
+
+        for(int j=max;j>=1;j--){
+
+            for(int i=0;i<n;i++){
+
+                if(j<=arr[i]){
+                    System.out.print("*\t");
+                }
+                else{
+                    System.out.print("\t");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();  // n= size of array
+
+        int arr[]=new int[n];
+        // Enter elements of array
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        // Find max of array
+        int max=arr[0];
+        for(int i=0;i<n;i++){
+
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+
+        barChart(arr,n,max);
+    }
+}
+
+
 
