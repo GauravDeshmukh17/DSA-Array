@@ -313,7 +313,7 @@ public class Main{
 
 // SUBTRACTION OF ARRAYS
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -381,6 +381,44 @@ public class Main{
 
         ararySubtraction(arr1,arr2,n1,n2);
     }
+}*/
+
+//----------------------------------------------------------------------------
+
+// REVERSE AN ARRAY
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+
+    public static void reverse(int arr[],int n){
+
+        int j=n-1;
+        for(int i=0;i<n/2;i++){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            j--;
+        }
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]);
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        reverse(arr,n);
+    }
 }
+
 
 
