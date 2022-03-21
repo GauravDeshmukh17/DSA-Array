@@ -1,3 +1,4 @@
+
 /*package com.company;
 
 public class Main {
@@ -127,7 +128,7 @@ public class Main{
 
 //------------------------------------------------------------------------------
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -172,7 +173,144 @@ public class Main{
 
         barChart(arr,n,max);
     }
-}
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// SUM OF ARRAY
+
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static int arraySum(int arr1[],int arr2[],int n1,int n2){
+
+        int ans=0;
+        int carry=0;
+        int power=1;
+        int i=n1-1;
+        int j=n2-1;
+
+        while(i>=0 || j>=0 || carry!=0){
+
+            if(i==-1){
+                i=0;
+                arr1[0]=0;
+            }
+            if(j==-1){
+                j=0;
+                arr2[0]=0;
+            }
+            int sum=arr1[i]+arr2[j]+carry;
+            carry=sum/10;
+            int temp=sum%10;
+            ans+=(temp*power);
+            power*=10;
+            i--;
+            j--;
+        }
+        return ans;
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n1=scn.nextInt(); // n1=size of first array
+        int n2=scn.nextInt(); // n2 =size of second array
+
+        int arr1[]=new int[n1];
+        int arr2[]=new int[n2];
+
+        // input of first array
+        for(int i=0;i<n1;i++){
+            arr1[i]=scn.nextInt();
+        }
+
+        //input of second array
+        for(int i=0;i<n2;i++){
+            arr2[i]=scn.nextInt();
+        }
+
+        int add=arraySum(arr1,arr2,n1,n2);
+        System.out.println(add);
+    }
+
+}*/
+
+//----------------------------------------------------------------------------------------
+
+// sum of array
+
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void arraySum(int arr1[],int arr2[],int n1,int n2,int n3){
+
+        int ans[]=new int[n3];
+        int carry=0;
+        int i=n1-1;
+        int j=n2-1;
+        int k=n3-1;
+
+        while(i>=0 || j>=0 || carry!=0){
+
+            if(i==-1){
+                i=0;
+                arr1[i]=0;
+            }
+            if(j==-1){
+                j=0;
+                arr2[j]=0;
+            }
+
+            int sum=arr1[i]+arr2[j]+carry;
+            carry=sum/10;
+            int temp=sum%10;
+            ans[k]=temp;
+
+            i--;
+            j--;
+            k--;
+        }
+        for(i=0;i<n3;i++){
+
+            System.out.println(ans[i]);
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n1=scn.nextInt();  // n1 = size of first array
+        int arr1[]=new int[n1];
+        for(int i=0;i<n1;i++){
+            arr1[i]=scn.nextInt();
+        }
+
+        int n2=scn.nextInt(); // n2 = size of second array
+        int arr2[]=new int[n2];
+        for(int i=0;i<n2;i++){
+            arr2[i]=scn.nextInt();
+        }
+
+        int n3=0;
+        if(n1>n2){
+            n3=n1+1;
+        }
+        if(n2>n1){
+            n3=n2+1;
+        }
+        arraySum(arr1,arr2,n1,n2,n3);
+    }
+}*/
+
+//---------------------------------------------------------------------------------
+
 
 
 
