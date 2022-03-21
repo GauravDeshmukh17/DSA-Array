@@ -311,6 +311,76 @@ public class Main{
 
 //---------------------------------------------------------------------------------
 
+// SUBTRACTION OF ARRAYS
 
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void ararySubtraction(int arr1[],int arr2[],int n1,int n2){
+
+        //  n2>n1
+        int i=n1-1;
+        int j=n2-1;
+        int k=n2-1;
+        int carry=0;
+        int ans[]=new int[n2];
+
+        while(carry!=0 || i>=0 || j>=0 ){
+
+            if(i==-1){
+                i=0;
+                arr1[i]=0;
+            }
+
+            int sub=arr2[j]-arr1[i]+carry;
+            carry=0;
+
+            if(sub<0){
+                sub=sub+10;
+                ans[k]=sub;
+                carry--;
+            }
+            else{
+                ans[k]=sub;
+            }
+
+            i--;
+            j--;
+            k--;
+
+        }
+
+        for(int p=0;p<n2;p++){
+
+            if(p==0 && ans[p]==0){
+                // do nothing
+            }
+            else{
+                System.out.println(ans[p]);
+            }
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n1=scn.nextInt();  // n1 = size of 1st array
+        int arr1[]=new int[n1];
+        for(int i=0;i<n1;i++){
+            arr1[i]=scn.nextInt();
+        }
+
+        int n2=scn.nextInt();  // n2 = size of 2nd array
+        int arr2[]=new int[n2];
+        for(int i=0;i<n2;i++){
+            arr2[i]=scn.nextInt();
+        }
+
+        ararySubtraction(arr1,arr2,n1,n2);
+    }
+}
 
 
