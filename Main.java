@@ -385,9 +385,9 @@ public class Main{
 
 //----------------------------------------------------------------------------
 
-// REVERSE AN ARRAY
+// REVERSEING AN ARRAY
 
-package com.company;
+/*package com.company;
 
 import java.util.Scanner;
 
@@ -418,6 +418,46 @@ public class Main{
 
         reverse(arr,n);
     }
+}*/
+
+//---------------------------------------------------------------------------------------------
+
+// FINDING ELELMENT IN AN ARRAY
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static int findElement(int a[],int d){
+
+        int temp=-1;
+        for(int i=0;i<a.length;i++){
+            if(a[i]==d){
+                temp=i;
+            }
+        }
+        if(temp==-1){
+
+           temp=-1;
+        }
+        return temp;
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int size=scn.nextInt();
+        int a[]=new int[size];
+        for(int i=0;i<size;i++){
+            a[i]=scn.nextInt();
+        }
+        int d=scn.nextInt();
+
+        System.out.println(findElement(a,d));
+    }
+
 }
 
 
