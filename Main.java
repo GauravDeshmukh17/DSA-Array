@@ -424,7 +424,7 @@ public class Main{
 
 // FINDING ELELMENT IN AN ARRAY
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -458,6 +458,51 @@ public class Main{
         System.out.println(findElement(a,d));
     }
 
+}*/
+
+//-------------------------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+
+    public static void printStar(int arr[]){
+
+        int max=arr[0];
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+
+        for(int i=max;i>=1;i--){
+
+            for(int j=0;j<arr.length;j++){
+
+                if(i>arr[j]){
+                    System.out.print("\t");
+                }
+                else{
+                    System.out.print("*\t");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int size=scn.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=scn.nextInt();
+        }
+        printStar(arr);
+    }
 }
 
 
