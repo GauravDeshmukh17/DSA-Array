@@ -509,7 +509,7 @@ public class Main{
 
 // REVERSE AN ARRAY
 
-package com.company;
+/*package com.company;
 
 import java.util.Scanner;
 
@@ -549,7 +549,82 @@ public class Main{
             System.out.print(arr[i]+" ");
         }
     }
+}*/
+
+//-------------------------------------------------------------------------------------------------
+
+// ROTATE AN ARRAY
+//(METHOD 1)
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void reverse1(int arr[]){
+
+        int i=0;
+        int j=arr.length-1;
+        while(i<j){
+
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+
+    }
+
+    public static void reverse2(int arr[],int k){
+
+        int i=0;
+        int j=k-1;
+        while(i<j){
+
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+    }
+
+    public static void reverse3(int arr[],int k){
+
+        int i=k;
+        int j=arr.length-1;
+        while(i<j){
+
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();     // n=size of array
+        int arr[]=new int [n];
+
+        for(int i=0;i<n;i++){    // Elements of array
+            arr[i]=scn.nextInt();
+        }
+
+        int k=scn.nextInt();     // Elements to rotate
+
+        reverse1(arr);
+        reverse2(arr,k);
+        reverse3(arr,k);
+
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]);
+        }
+    }
+
 }
-
-
 
