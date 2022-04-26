@@ -556,7 +556,7 @@ public class Main{
 // ROTATE AN ARRAY
 //(METHOD 1)
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -624,6 +624,51 @@ public class Main{
         for(int i=0;i<n;i++){
             System.out.println(arr[i]);
         }
+    }
+
+}*/
+
+//-------------------------------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void reverse(int arr[],int i,int j){
+
+        while(i<j){
+
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[]=new int[n];
+
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        int k=scn.nextInt();
+
+        reverse(arr,0,arr.length-1);
+        reverse(arr,0,k-1);
+        reverse(arr,k,arr.length-1);
+
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]);
+        }
+
     }
 
 }
