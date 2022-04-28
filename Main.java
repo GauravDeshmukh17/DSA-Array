@@ -687,13 +687,14 @@ import java.util.*;
 
 public class Main{
 
-    public static void inverseArray(int arr1[],int arr2[]){
+    public static int[] inverseArray(int arr1[],int arr2[]){
 
         for(int i=0;i<arr1.length;i++){
 
             int k=arr1[i];
             arr2[k]=i;
         }
+        return arr2;
     }
 
     public static void main(String args[]){
