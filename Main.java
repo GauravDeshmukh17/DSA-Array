@@ -633,7 +633,7 @@ public class Main{
 // ROTATE AN ARRAY
 // METHOD 2
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -677,5 +677,39 @@ public class Main{
 
     }
 
-}
+}*/
 
+//-------------------------------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void inverseArray(int arr1[],int arr2[]){
+
+        for(int i=0;i<arr1.length;i++){
+
+            int k=arr1[i];
+            arr2[k]=i;
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();      // n=size of array
+        int arr1[]=new int[n];
+        int arr2[]=new int[n];
+        for(int i=0;i<n;i++){     // input of array1
+            arr1[i]=scn.nextInt();
+        }
+
+        inverseArray(arr1,arr2);
+
+        for(int i=0;i<n;i++){
+            System.out.println(arr2[i]);
+        }
+    }
+}
