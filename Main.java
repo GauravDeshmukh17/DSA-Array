@@ -630,6 +630,9 @@ public class Main{
 
 //-------------------------------------------------------------------------------------------------------
 
+// ROTATE AN ARRAY
+// METHOD 2
+
 package com.company;
 
 import java.util.*;
@@ -652,21 +655,24 @@ public class Main{
     public static void main(String args[]){
 
         Scanner scn=new Scanner(System.in);
-        int n=scn.nextInt();
+        int n=scn.nextInt();  // n=size of array
         int arr[]=new int[n];
 
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n;i++){    // input of array
             arr[i]=scn.nextInt();
         }
 
-        int k=scn.nextInt();
-
+        int k=scn.nextInt();   // k=elements to rotate from last
+        k%=n;
+        if(k<0){
+            k+=n;
+        }
         reverse(arr,0,arr.length-1);
         reverse(arr,0,k-1);
         reverse(arr,k,arr.length-1);
 
         for(int i=0;i<n;i++){
-            System.out.println(arr[i]);
+            System.out.print(arr[i]+" ");
         }
 
     }
