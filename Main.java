@@ -681,7 +681,9 @@ public class Main{
 
 //-------------------------------------------------------------------------------------------------------
 
-package com.company;
+// INVESRE AN ARARY
+
+/*package com.company;
 
 import java.util.*;
 
@@ -713,4 +715,44 @@ public class Main{
             System.out.println(arr2[i]);
         }
     }
-}
+}*/
+
+//-------------------------------------------------------------------------------------------------------
+
+// SUB-ARRAY
+
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void subArrays(int arr[]){
+
+        for(int si=0;si<arr.length;si++){
+
+            for(int ei=si;ei<arr.length;ei++){
+
+                for(int i=si;i<=ei;i++){
+                    System.out.print(arr[i]+"\t");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();      // n = size of array
+        int arr[]=new int[n];
+
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        subArrays(arr);
+    }
+}*/
+
+//-------------------------------------------------------------------------------------------------------
