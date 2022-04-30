@@ -756,3 +756,64 @@ public class Main{
 }*/
 
 //-------------------------------------------------------------------------------------------------------
+
+// SUBSET OF ARRAY
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void susetOfArray(int arr[],int n){
+
+        int ts=(int)Math.pow(2,n);
+
+        for(int i=0;i<ts;i++){
+
+            int k=i;
+            int ans=0;
+            int power=1;
+
+            while(k!=0){
+
+                int remainder=k%2;
+                ans+=(remainder*power);
+                power=power*10;
+                k/=2;
+            }
+
+            int div=(int)Math.pow(10,n-1);
+            for(int j=0;j<arr.length;j++){
+
+                int res=ans/div;
+                int finalAns=arr[j]*res;
+                if(finalAns==0){
+                    System.out.print("-\t");
+                }
+                else{
+                    System.out.print(finalAns+"\t");
+                }
+                ans=ans%div;
+                div/=10;
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[]=new int[n];
+
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        susetOfArray(arr,n);
+    }
+
+}
+
