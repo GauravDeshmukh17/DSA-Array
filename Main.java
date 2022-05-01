@@ -759,7 +759,7 @@ public class Main{
 
 // SUBSET OF ARRAY
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -815,5 +815,56 @@ public class Main{
         susetOfArray(arr,n);
     }
 
+}*/
+
+//-------------------------------------------------------------------------------------------------------
+
+// BINARY SEARCH WITH SORTED ARARY
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static int binarySearch(int arr[],int data){
+
+        int left=0;
+        int right=arr.length-1;
+
+        while(left<=right){
+
+            int mid=(left+right)/2;
+
+            if(data==arr[mid]){
+                return mid;
+            }
+            else if(data<arr[mid]){
+                right=mid-1;
+            }
+            else{
+                left=mid+1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[]=new int[n];
+
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        int data=scn.nextInt();
+
+        int bs=binarySearch(arr,data);
+        System.out.println(bs);
+    }
+
 }
+
 
