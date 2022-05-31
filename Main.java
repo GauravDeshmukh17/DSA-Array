@@ -821,7 +821,7 @@ public class Main{
 
 // BINARY SEARCH WITH SORTED ARARY
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -865,6 +865,62 @@ public class Main{
         System.out.println(bs);
     }
 
-}
+} */
+//-------------------------------------------------------------------------------------------------------
 
+/*package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+
+    public static int floor_ceil(int arr[],int data) {
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left<=right) {
+
+            int mid=left+right/2;
+
+            if (data==arr[mid]) {
+                return arr[mid];
+            }
+            if(arr[mid]<data && arr[mid+1]>data) {
+                System.out.println(arr[mid]);
+                return arr[mid+1];
+            }
+            else if(arr[mid]>data && arr[mid-1]<data) {
+                System.out.println(arr[mid]);
+                return arr[mid-1];
+            }
+            else if(arr[mid]<data) {
+                left=mid+1;
+            }
+            else {
+                right=mid-1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[]=new int [n];
+
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+
+        int data=scn.nextInt();
+
+        int fac=floor_ceil(arr,data);
+        System.out.println(fac);
+    }
+
+}*/
+
+//-------------------------------------------------------------------------------------------------------
 
