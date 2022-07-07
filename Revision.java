@@ -61,9 +61,9 @@ public class Revision {
 
 }*/
 
-//-------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
 
-package com.company;
+/*package com.company;
 
 import java.util.Scanner;
 
@@ -114,6 +114,78 @@ public class Revision{
 
     }
 
+}*/
+
+//-----------------------------------------------------------------------------------------------------
+
+// SUM OF TWO ARRAYS
+
+package com.company;
+
+import java.util.*;
+
+public class Revision{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+
+        int n1=scn.nextInt();
+        int arr1[]=new int[n1];
+        for(int i=0;i<n1;i++){
+
+            arr1[i]=scn.nextInt();
+        }
+
+        int n2=scn.nextInt();
+        int arr2[]=new int[n2];
+        for(int j=0;j<n2;j++){
+
+            arr2[j]=scn.nextInt();
+        }
+
+        int n3=Math.max(n1,n2)+1;
+        int arr3[]=new int[n3];
+        int carry=0;
+        int i=arr1.length-1;
+        int j=arr2.length-1;
+        int k=n3-1;
+
+        while(k>=0){
+
+            int sum=0;
+            if(i>=0){
+
+                sum=sum+arr1[i];
+            }
+            if(j>=0){
+
+                sum=sum+arr2[j];
+            }
+
+            sum=sum+carry;
+
+            int ans=sum%10;
+            carry=sum/10;
+
+            arr3[k]=ans;
+            k--;
+            i--;
+            j--;
+
+        }
+        for(int m=0;m<n3;m++){
+
+            if(m==0 && arr3[m]==0){
+                // do nothing
+            }
+            else{
+                System.out.print(arr3[m]+" ");
+            }
+        }
+    }
+
 }
+
 
 
