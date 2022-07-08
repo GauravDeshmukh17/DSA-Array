@@ -189,7 +189,7 @@ public class Revision{
 
 //-----------------------------------------------------------------------------------------------------
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -234,6 +234,67 @@ public class Revision {
         System.out.println(bs);
     }
 
-}
+}*/
 
+//----------------------------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Revision{
+
+    public static void floorCeil(int arr[],int data){
+
+        int floor=-1;
+        int ceil=-1;
+        int left=0;
+        int right= arr.length-1;
+
+        while(left<=right){
+
+            int mid=(left+right)/2;
+
+            if(arr[mid]==data){
+                System.out.println(arr[mid]);
+            }
+            else if(arr[mid]>data){
+                right=mid-1;
+                ceil=mid;
+            }
+            else{
+                left=mid+1;
+                floor=mid;
+            }
+        }
+        if(floor>=0){
+            System.out.println(arr[floor]);
+        }
+        if(ceil>=0){
+            System.out.println(arr[ceil]);
+        }
+        if(floor==-1){
+            System.out.println(floor);
+        }
+        if(ceil==-1){
+            System.out.println(ceil);
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+
+            arr[i]=scn.nextInt();
+        }
+
+        int data=scn.nextInt();
+        floorCeil(arr,data);
+    }
+
+}
 
