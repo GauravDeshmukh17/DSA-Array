@@ -238,6 +238,8 @@ public class Revision {
 
 //----------------------------------------------------------------------------------------------------
 
+// FLOOR AND CEIL
+
 package com.company;
 
 import java.util.Scanner;
@@ -260,25 +262,15 @@ public class Revision{
             }
             else if(arr[mid]>data){
                 right=mid-1;
-                ceil=mid;
+                ceil=arr[mid];
             }
             else{
                 left=mid+1;
-                floor=mid;
+                floor=arr[mid];
             }
         }
-        if(floor>=0){
-            System.out.println(arr[floor]);
-        }
-        if(ceil>=0){
-            System.out.println(arr[ceil]);
-        }
-        if(floor==-1){
-            System.out.println(floor);
-        }
-        if(ceil==-1){
-            System.out.println(ceil);
-        }
+        System.out.println(floor);
+        System.out.println(ceil);
     }
 
     public static void main(String args[]){
@@ -298,3 +290,4 @@ public class Revision{
 
 }
 
+//----------------------------------------------------------------------------------------------------
