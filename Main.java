@@ -924,3 +924,51 @@ public class Main{
 
 //-------------------------------------------------------------------------------------------------------
 
+// ARRAY TRANSPOSE
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static int[][] arrayTranspose(int arr[][],int m,int n){
+
+        for(int j=0;j<n;j++){
+            for(int i=0;i<m;i++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+        return arr;
+    }
+
+    public static void originalArray(int arr[][],int m,int n){
+
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int m=scn.nextInt();
+        int n=scn.nextInt();
+        int arr[][]=new int[m][n];
+
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+        originalArray(arr,m,n);
+        int at[][]=arrayTranspose(arr,m,n);
+    }
+}
+
+
+
