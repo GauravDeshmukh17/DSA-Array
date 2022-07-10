@@ -1078,7 +1078,7 @@ public class Main{
 
 // SPIRAL METHOD-II
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1135,4 +1135,38 @@ public class Main{
         }
     }
 
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// ROTATE AN ARRAY BY 90 DEGREE
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int m=scn.nextInt();    // m=no. of rows
+        int n=scn.nextInt();    // n=no.columns
+        int arr[][]=new int[m][n];
+
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        for(int j=0;j<n;j++){
+            for(int i=m-1;i>=0;i--){
+                System.out.print(arr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+
+    }
 }
+
