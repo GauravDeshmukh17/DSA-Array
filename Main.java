@@ -1139,9 +1139,9 @@ public class Main{
 
 //------------------------------------------------------------------------------------------------------
 
-// ROTATE AN ARRAY BY 90 DEGREE
+// ROTATE AN ARRAY(m*n) BY 90 DEGREE
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1168,5 +1168,36 @@ public class Main{
         }
 
     }
-}
+}*/
 
+//------------------------------------------------------------------------------------------------------
+
+// ROTATE AN ARRAY(n*n) BY 90 DEGREE
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();    // n=no.columns
+        int arr[][]=new int[n][n];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        for(int i=0;i<n;i++){
+            for(int j=n-1;j>=0;j--){
+                System.out.print(arr[j][i]+"\t");
+            }
+            System.out.println();
+        }
+
+    }
+}
