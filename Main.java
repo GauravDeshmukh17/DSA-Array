@@ -974,7 +974,7 @@ public class Main{
 
 // STATE OF WAKANDA-I
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1012,6 +1012,64 @@ public class Main{
         }
         int sow[][]=stateOfWakanda(arr,m,n);
     }
+}*/
+
+//-------------------------------------------------------------------------------------------------------
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int m=scn.nextInt();
+        int n=scn.nextInt();
+        int arr[][]=new int[m][n];
+
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        int count=0;
+        int rmin=0;
+        int rmax=m;
+        int cmin=0;
+        int cmax=n;
+
+        while(count<=m*n){
+
+            for(int i=rmin;i<=rmax-1 && count<=m*n;i++){
+                System.out.println(arr[i][cmin]);
+                count++;
+            }
+
+            for(int i=cmin+1;i<=cmax-1 && count<=m*n;i++){
+                System.out.println(arr[rmax-1][i]);
+                count++;
+            }
+
+            for(int i=rmax-2;i>=rmin && count<=m*n;i--){
+                System.out.println(arr[i][cmax-1]);
+                count++;
+            }
+
+            for(int i=cmax-2;i>=cmin+1 && count<=m*n;i--){
+                System.out.println(arr[rmin][i]);
+                count++;
+            }
+
+            rmax--;
+            rmin++;
+            cmin++;
+            cmax--;
+        }
+    }
+
 }
 
 
