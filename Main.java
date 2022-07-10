@@ -1016,7 +1016,9 @@ public class Main{
 
 //-------------------------------------------------------------------------------------------------------
 
-package com.company;
+// SPIRAL
+
+/*package com.company;
 
 import java.util.*;
 
@@ -1041,24 +1043,24 @@ public class Main{
         int cmin=0;
         int cmax=n;
 
-        while(count<=m*n){
+        while(count<m*n){
 
-            for(int i=rmin;i<=rmax-1 && count<=m*n;i++){
+            for(int i=rmin;i<=rmax-1 && count<m*n;i++){
                 System.out.println(arr[i][cmin]);
                 count++;
             }
 
-            for(int i=cmin+1;i<=cmax-1 && count<=m*n;i++){
+            for(int i=cmin+1;i<=cmax-1 && count<m*n;i++){
                 System.out.println(arr[rmax-1][i]);
                 count++;
             }
 
-            for(int i=rmax-2;i>=rmin && count<=m*n;i--){
+            for(int i=rmax-2;i>=rmin && count<m*n;i--){
                 System.out.println(arr[i][cmax-1]);
                 count++;
             }
 
-            for(int i=cmax-2;i>=cmin+1 && count<=m*n;i--){
+            for(int i=cmax-2;i>=cmin+1 && count<m*n;i--){
                 System.out.println(arr[rmin][i]);
                 count++;
             }
@@ -1070,6 +1072,67 @@ public class Main{
         }
     }
 
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// SPIRAL METHOD-II
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn = new Scanner(System.in);
+        int m=scn.nextInt();
+        int n=scn.nextInt();
+        int arr[][]=new int[m][n];
+
+        for (int i=0;i<m;i++) {
+            for (int j=0;j<n;j++) {
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        int count = 0;
+        int rmin = 0;
+        int rmax = m-1;
+        int cmin = 0;
+        int cmax = n-1;
+
+        while (count<m*n){
+
+            for (int row=rmin; row<=rmax && count<m*n; row++) {
+                System.out.println(arr[row][cmin]);
+                count++;
+            }
+
+            cmin++;
+
+            for (int col = cmin; col<=cmax && count<m*n; col++) {
+                System.out.println(arr[rmax][col]);
+                count++;
+            }
+
+            rmax--;
+
+            for (int row= rmax; row>=rmin && count<m*n; row--) {
+                System.out.println(arr[row][cmax]);
+                count++;
+            }
+
+            cmax--;
+
+            for (int col=cmax; col>=cmin&& count<m*n; col--) {
+                System.out.println(arr[rmin][col]);
+                count++;
+            }
+
+            rmin++;
+        }
+    }
+
 }
-
-
