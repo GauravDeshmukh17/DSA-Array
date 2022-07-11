@@ -1174,7 +1174,7 @@ public class Main{
 
 // ROTATE AN ARRAY(n*n) BY 90 DEGREE
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1200,4 +1200,52 @@ public class Main{
         }
 
     }
-}
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// TRANSPOSE OF ARRAY(n*n)
+
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[][]=new int[n][n];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+
+                int temp=arr[i][j];
+                arr[i][j]=arr[j][i];
+                arr[j][i]=temp;
+            }
+        }
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                System.out.print(arr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+
+}*/
+
+//Note : Here time complexity is O(n square by 2)
+
+//------------------------------------------------------------------------------------------------------
+
+
