@@ -1248,4 +1248,46 @@ public class Main{
 
 //------------------------------------------------------------------------------------------------------
 
+// STATE OF WAKANDA II
+
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[][]=new int[n][n];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        int up=0;
+        int down=n-1;
+
+        while(up<=down){
+
+            int i=0;
+            int j=up;
+            while(j<n){
+                System.out.println(arr[i][j]);
+                i++;
+                j++;
+            }
+            up++;
+        }
+
+    }
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+
+
 
