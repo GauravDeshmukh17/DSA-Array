@@ -1403,6 +1403,20 @@ public class Main{
         return arr1D;
     }
 
+    public static void rotate(int arr1D[],int r){
+
+        r=r%arr1D.length;
+
+        if(r<0){
+            r=r+arr1D.length;
+        }
+
+        arr1D=reverse1D(arr1D,0,arr1D.length-1);   //  reverse entire 1D array
+        arr1D=reverse1D(arr1D,0,r-1);              //  reverse first r elements of 1D array
+        arr1D=reverse1D(arr1D,r, arr1D.length-1);      //  reverse last (all -r) elements of 1D array
+    }
+
+
     public static int[][] refilling2DArray(int arr[][],int arr1D[],int s){
 
         int m= arr.length;
@@ -1459,12 +1473,8 @@ public class Main{
         int r=scn.nextInt();     //  r=rotate number
 
         int[] arr1D=fill1DFrom2D(arr,s);  // filling 1D array
-
-        arr1D=reverse1D(arr1D,0,arr1D.length-1);   //  reverse entire 1D array
-        arr1D=reverse1D(arr1D,0,r-1);              //  reverse first r elements of 1D array
-        arr1D=reverse1D(arr1D,r, arr1D.length-1);      //  reverse last (all -r) elements of 1D array
-
-        refilling2DArray(arr,arr1D,s);
+        rotate(arr1D,r);                  // rotate r elements
+        refilling2DArray(arr,arr1D,s);    // refilling 2D array
 
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
