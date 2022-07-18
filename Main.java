@@ -1288,6 +1288,193 @@ public class Main{
 
 //------------------------------------------------------------------------------------------------------
 
+// SADDLE PRICE
+
+/*package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void saddlePrice(int arr[][],int n){
+
+        int col=0;
+        for(int i=0;i<n;i++){
+
+            int min=arr[i][0];
+            for(int j=0;j<n;j++){
+                if(arr[i][j]<min){
+                    min=arr[i][j];
+                    col=j;
+                }
+            }
+
+            int max=arr[0][col];
+            for(int k=0;k<n;k++){
+                if(arr[k][col]>max){
+                    max=arr[k][col];
+                }
+            }
+
+            if(max==min){
+                System.out.println(max);
+                return;
+            }
+        }
+        System.out.println("Invalid Input");
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[][]=new int[n][n];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+        saddlePrice(arr,n);
+    }
+}
+*/
+//------------------------------------------------------------------------------------------------------
+
+// RING ROTATE
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static int[] fill1DFrom2D(int arr[][],int s){
+
+        int m= arr.length;
+        int n=arr[0].length;
+
+        int rmin=s-1;
+        int cmin=s-1;
+        int rmax=m-s;
+        int cmax=n-s;
+
+        int size=2*(rmax-rmin)+2*(cmax-cmin);
+        int arr1D[]=new int[size];
+        int index=0;
+
+        for(int row=rmin;row<=rmax;row++){
+            arr1D[index]=arr[row][cmin];
+            index++;
+        }
+        cmin++;
+
+        for(int col=cmin;col<=cmax;col++){
+            arr1D[index]=arr[rmax][col];
+            index++;
+        }
+        rmax--;
+
+        for(int row=rmax;row>=rmin;row--){
+            arr1D[index]=arr[row][cmax];
+            index++;
+        }
+        cmax--;
+
+        for(int col=cmax;col>=cmin;col--){
+            arr1D[index]=arr[rmin][col];
+            index++;
+        }
+        rmin++;
+
+        return arr1D;
+    }
+
+    public static int[] reverse1D(int arr1D[],int left,int right){
+
+        while(left<right){
+
+            int temp=arr1D[left];
+            arr1D[left]=arr1D[right];
+            arr1D[right]=temp;
+            left++;
+            right--;
+        }
+        return arr1D;
+    }
+
+    public static int[][] refilling2DArray(int arr[][],int arr1D[],int s){
+
+        int m= arr.length;
+        int n=arr[0].length;
+
+        int rmin=s-1;
+        int cmin=s-1;
+        int rmax=m-s;
+        int cmax=n-s;
+
+        int index=0;
+
+        for(int row=rmin;row<=rmax;row++){
+            arr[row][cmin]=arr1D[index];
+            index++;
+        }
+        cmin++;
+
+        for(int col=cmin;col<=cmax;col++){
+            arr[rmax][col]=arr1D[index];
+            index++;
+        }
+        rmax--;
+
+        for(int row=rmax;row>=rmin;row--){
+            arr[row][cmax]=arr1D[index];
+            index++;
+        }
+        cmax--;
+
+        for(int col=cmax;col>=cmin;col--){
+            arr[rmin][col]=arr1D[index];
+            index++;
+        }
+        rmin++;
+
+        return arr;
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int m=scn.nextInt();     //  m=no. of rows
+        int n=scn.nextInt();     //  n=no. of coloumns
+        int arr[][]=new int[m][n];
+
+        for(int i=0;i<m;i++){             // taking input of 2D array
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        int s=scn.nextInt();     //  s=shell number
+        int r=scn.nextInt();     //  r=rotate number
+
+        int[] arr1D=fill1DFrom2D(arr,s);  // filling 1D array
+
+        arr1D=reverse1D(arr1D,0,arr1D.length-1);   //  reverse entire 1D array
+        arr1D=reverse1D(arr1D,0,r-1);              //  reverse first r elements of 1D array
+        arr1D=reverse1D(arr1D,r, arr1D.length-1);      //  reverse last (all -r) elements of 1D array
+
+        refilling2DArray(arr,arr1D,s);
+
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                System.out.print(arr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+
+}
 
 
 
