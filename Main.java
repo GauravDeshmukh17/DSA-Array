@@ -1343,7 +1343,7 @@ public class Main{
 
 // RING ROTATE
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1484,7 +1484,60 @@ public class Main{
         }
     }
 
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// SEARCH IN SORTED 2D ARRAY
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void searchIn2DArray(int arr[][],int data){
+
+        int row=arr.length-1;
+        int col=0;
+
+        while(row>0 && col<arr[0].length){
+
+            if(arr[row][col]==data){
+                System.out.println(row);
+                System.out.println(col);
+                return;
+            }
+            else if(arr[row][col]>data){
+                row--;
+            }
+            else{
+                col++;
+            }
+        }
+
+        System.out.print("Not Found");
+    }
+
+    public static void main(String args[]){
+
+        Scanner scn=new Scanner(System.in);
+        int m= scn.nextInt();   // m=no. of rows
+        int n=scn.nextInt();    // n=no .of columns
+        int arr[][]=new int[m][n];
+
+        for(int i=0;i<m;i++){     // input of 2D array
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+        int data=scn.nextInt();   // input of elemnt to search
+
+        searchIn2DArray(arr,data);
+    }
+
 }
+
 
 
 
