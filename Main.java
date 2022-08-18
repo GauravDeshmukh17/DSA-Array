@@ -1490,7 +1490,7 @@ public class Main{
 
 // SEARCH IN SORTED 2D ARRAY
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1536,8 +1536,83 @@ public class Main{
         searchIn2DArray(arr,data);
     }
 
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// LEETCODE
+//2373. Largest Local Values in a Matrix
+
+package com.company;
+
+import java.util.*;
+
+public class Main{
+
+    public static void main(String args[]){
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int arr[][]=new int[n][n];
+        int outputArr[][]=new int [n-2][n-2];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=scn.nextInt();
+            }
+        }
+
+        int row=0;
+        int a=0;
+        int b=3;
+        int m=0;
+        int ptr=0;
+
+        while(ptr!=n-2) {
+
+            int max = arr[row][a];
+            for (int i = a; i < b; i++) {
+                if (arr[row][i] > max) {
+                    max = arr[row][i];
+                }
+            }
+            row++;
+            for (int i = a; i < b; i++) {
+                if (arr[row][i] > max) {
+                    max = arr[row][i];
+                }
+            }
+            row++;
+            for (int i = a; i < b; i++) {
+                if (arr[row][i] > max) {
+                    max = arr[row][i];
+                }
+            }
+            outputArr[ptr][m] = max;
+
+            if (b != n) {
+                a++;
+                b++;
+                m++;
+                row=ptr;
+            }
+            else {
+                ptr++;
+                row=ptr;
+                m = 0;
+                a = 0;
+                b = 3;
+            }
+        }
+
+        for(int i=0;i<n-2;i++){
+            for(int j=0;j<n-2;j++){
+                System.out.print(outputArr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+
+    }
+
 }
-
-
 
 
