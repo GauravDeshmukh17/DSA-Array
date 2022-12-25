@@ -1543,7 +1543,7 @@ public class Main{
 // LEETCODE
 //2373. Largest Local Values in a Matrix
 
-package com.company;
+/*package com.company;
 
 import java.util.*;
 
@@ -1613,6 +1613,102 @@ public class Main{
 
     }
 
+}*/
+
+//------------------------------------------------------------------------------------------------------
+
+// WINDOW SLIDING
+
+/*package com.company;
+
+import java.util.Scanner;
+
+public class Main{
+
+    public static int[] windowSliding(int[] arr,int k){
+        int i=0;
+        int j=k-1;
+        int[] ans=new int[arr.length-k+1];
+        while(j<arr.length){
+            int max=arr[i];
+            for(int start=i;start<=j;start++){
+                if(arr[start]>max){
+                    max=arr[start];
+                }
+            }
+            ans[i]=max;
+            i++;
+            j++;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]= scn.nextInt();
+        }
+        int k= scn.nextInt();
+
+        int[] ws=windowSliding(arr,k);
+        for(int i=0;i<ws.length;i++){
+            System.out.print(ws[i]+" ");
+        }
+    }
+}*/
+
+//---------------------------------------------------------------------------------------------------
+
+// COMBINATION SUM
+// LEETCODE 39
+
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main{
+
+    public static ArrayList<String> combinationSum(int[] arr,int sum,int target,int k){
+        if(sum==target){
+            ArrayList<String> base=new ArrayList<>();
+            base.add("");
+            return base;
+        }
+        if(sum>target){
+            ArrayList<String> base=new ArrayList<>();
+            return base;
+        }
+
+        ArrayList<String> ans=new ArrayList<>();
+        for(int i=k;i<arr.length;i++){
+
+            ArrayList<String> list=combinationSum(arr,sum+arr[i],target,i);
+
+            for(int j=0;j< list.size();j++){
+                ans.add(list.get(j)+arr[i]+" ");
+            }
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+        int target= scn.nextInt();
+
+        ArrayList<String>cs=combinationSum(arr,0,target,0);
+        System.out.println(cs);
+    }
 }
+
+
+
 
 
